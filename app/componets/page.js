@@ -19,7 +19,7 @@ const Page = async (req,res) => {
             bio:user.bio
         })
     } catch (error) {
-        console.log("Error at page.js")
+        console.log("Error at page.js",error)
         return res.json(error,{status:500})
     }
 }

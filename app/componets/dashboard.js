@@ -15,7 +15,7 @@ const Dashboard = async (req, res) => {
 
         // Concurrently fetch counts and paginated data
         const [totalSupports, totalTransactions, totalEarningsResult, supports, transactions] = await Promise.all([
-            prisma.support.count({ where: { creatorId: user.id } }),
+            prisma.support.count({ where: { creatorId: user.id,status:"SUCCESS" } }),
             prisma.transaction.count({ where: { userId: user.id } }),
             prisma.wallet.findUnique({
                 where: { userId: user.id },

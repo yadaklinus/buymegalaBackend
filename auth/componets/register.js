@@ -38,7 +38,7 @@ const Register = async (req,res)=>{
 
     return res.status(201).json("done")
     } catch (error) {
-        console.log("Error At Register.js")
+        console.log("Error At Register.js",error)
         res.status(500).json("error")
     }
 }
